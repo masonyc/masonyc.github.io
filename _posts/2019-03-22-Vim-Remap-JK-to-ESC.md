@@ -9,6 +9,6 @@ tags:
 - Vim
 ---
 
-<blockquote class="blockquote-center">inoremap jk '<'Esc>' </blockquote>
+<blockquote class="blockquote-center">inoremap jk &lt;Esc&gt; </blockquote>
 
 In vim when we are in insert mode, pressing <ESC> can be too far away from the keyboard and causing inconvenience. Luckly, we can edit .vimrc file to remap <ESC> key to something else. Following code will remap jk to do the job of <ESC> key in insert mode. 

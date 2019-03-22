@@ -1,6 +1,9 @@
 ---
 title: Vim Remap JK to Esc in Insert Mode
 date: 2019-03-22 19:09:20
+auto_excerpt:
+  enable: true
+  length: 150
 categories: Vim 
 tags:
 - Vim

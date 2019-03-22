@@ -92,7 +92,7 @@ rss: false
 #since: 2019
 
 # icon between year and author @Footer
-authoricon: heart
+authoricon: robot
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -121,9 +121,9 @@ index_with_subtitle: false
 menu:
   home: /
   categories: /categories/
+  tags: /tags/
   about: /about/
   #archives: /archives/
-  tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 

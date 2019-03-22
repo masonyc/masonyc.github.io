@@ -6,8 +6,10 @@
 # Site
 title: Yun's Learning Notes 
 subtitle:
-description:
-author: Mason(Yun) Chen 
+description: Interested in AI technology
+author: 
+  name: Mason(Yun) Chen 
+  email: mason.yunchen@gmail.com
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
 date_format: '%Y-%m-%d'
@@ -79,7 +81,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Machine Learning, Xamarin, c#"
+keywords: "Machine Learning, Xamarin, AI"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.

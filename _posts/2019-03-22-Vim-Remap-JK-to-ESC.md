@@ -5,8 +5,6 @@ auto_excerpt:
   enable: true
   length: 150
 categories: Vim 
-tags:
-- Vim
 ---
 
 <blockquote class="blockquote-center">inoremap jk &lt;Esc&gt; </blockquote>

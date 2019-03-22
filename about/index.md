@@ -3,4 +3,6 @@ layout: page
 type: about
 ---
 
-Building...
+### About me
+
+I am a full stack developer interested in AI technology.

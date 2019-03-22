@@ -1,9 +1,9 @@
 ---
-title: Vim Remap JK to Esc in Insert Mode
+title: "Vim Remap JK to Esc in Insert Mode"
 date: 2019-03-22 19:09:20
 tags: 
   - Vim
-categories: Vim 
+categories: "Vim" 
 ---
 
 <blockquote class="blockquote-center">inoremap jk &lt;Esc&gt; </blockquote>

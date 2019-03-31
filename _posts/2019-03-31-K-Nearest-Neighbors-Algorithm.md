@@ -4,7 +4,7 @@ date: 2019-03-31 19:56:20
 tags: 
   - Machine Learning
   - Machine Learning In Action 
-categories: "Machine_Learning" 
+categories: "AI" 
 ---
 Today I am going to talk about an algorithm called 'K Nearest Neighbors Algorithm'. Assume we have an exisintg dataset and we labeled all the data in the dataset - we know what class each piece of data should fall into. When we have a new piece of data without a label, we calculate the distance of the new data to all the data in our dataset, then we take the k-closest(neighbors) datas and look at their labels. Lastly, we take the label that have most apperance in the k-closest datas and classify the new data as one of them.
 

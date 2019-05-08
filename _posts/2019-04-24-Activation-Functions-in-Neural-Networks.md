@@ -6,6 +6,7 @@ tags:
   - Deep Learning
   - Neural Networks
 categories: "AI" 
+mathjax: true
 ---
 In this article, I am going to talk about the commonly used activation functions in neural networks. Nowadays, people usually use Sigmoid function, TANH function and ReLu function as activation functions but you may ask "what's the difference between them and which one should I use?" Don't worry, I will explain them in detail below.
 

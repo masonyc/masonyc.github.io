@@ -12,11 +12,11 @@ In this article, I am going to talk about the commonly used activation functions
 
 ### Sigmoid Function
 ![Sigmoid graph](/assets/images/Sigmoid.png)
-The formula for Sigmoid Function is $$A = 1 / (1 + e^-x)$$. It is a non linear function in nature and the output will always in range of (0,1) which is great because it suits binary classification problem. But when z value is either very large or very small, the gradient or the slope of this function becomes very small (close to 0) and this can slow down gradient descent. Next, we are going to talk about TANH function, which is almost always works better than the sigmoid function.
+The formula for Sigmoid Function is $$A = 1 / (1 + e^{-x})$$. It is a non linear function in nature and the output will always in range of (0,1) which is great because it suits binary classification problem. But when z value is either very large or very small, the gradient or the slope of this function becomes very small (close to 0) and this can slow down gradient descent. Next, we are going to talk about TANH function, which is almost always works better than the sigmoid function.
 
 ### TANH / Hyperbolic Tangent Function
 ![TANH graph](/assets/images/TANH.png)
-The formular for TANH function is $$A = (e^z - e^-z) / (e^z + e^-z)$$. The TANH function is a shifted version of the sigmoid function. It's output is in range(-1,1) which is better in most cases than sigmoid function because the mean of the activations are now closer to 0 and the gradient is much stepper. But it still has the same problem that sigmoid function had, when z is extreme large or extreme small, gradient can becomes very small and slow down the gradient descent. So next, I will talk about one other choice that is very popular is called rectify linear unit (ReLu function).
+The formular for TANH function is $$A = (e^z - e^{-z}) / (e^z + e^{-z})$$. The TANH function is a shifted version of the sigmoid function. It's output is in range(-1,1) which is better in most cases than sigmoid function because the mean of the activations are now closer to 0 and the gradient is much stepper. But it still has the same problem that sigmoid function had, when z is extreme large or extreme small, gradient can becomes very small and slow down the gradient descent. So next, I will talk about one other choice that is very popular is called rectify linear unit (ReLu function).
 
 ### ReLu Function
 ![ReLu graph](/assets/images/ReLu.jpeg)

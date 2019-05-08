@@ -11,7 +11,7 @@ In this article, I am going to talk about the commonly used activation functions
 
 ### Sigmoid Function
 ![Sigmoid graph](/assets/images/Sigmoid.png)
-The formula for Sigmoid Function is <code>A = 1 / (1 + e<sup>-x</sup>)</code>. It is a non linear function in nature and the output will always in range of (0,1) which is great because it suits binary classification problem. But when z value is either very large or very small, the gradient or the slope of this function becomes very small (close to 0) and this can slow down gradient descent. Next, we are going to talk about TANH function, which is almost always works better than the sigmoid function.
+The formula for Sigmoid Function is \(A = 1 / (1 + e^-x)\)<code>A = 1 / (1 + e<sup>-x</sup>)</code>. It is a non linear function in nature and the output will always in range of (0,1) which is great because it suits binary classification problem. But when z value is either very large or very small, the gradient or the slope of this function becomes very small (close to 0) and this can slow down gradient descent. Next, we are going to talk about TANH function, which is almost always works better than the sigmoid function.
 
 ### TANH / Hyperbolic Tangent Function
 ![TANH graph](/assets/images/TANH.png)

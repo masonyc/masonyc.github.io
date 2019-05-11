@@ -25,6 +25,7 @@ Regularization on back propogation is $$\frac{\lambda}{m} W^{[l]}$$.
 
 ## Dropout Regularization 
 **Do not use it in test time**
+
 Dropout regularization is random cross out some nodes in layer so we get a smaller nerual network.
 
 Implementing dropout("Inverted dropout") with 3 layer.

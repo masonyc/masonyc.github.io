@@ -62,18 +62,18 @@ Gradient checking can help you to know whether there are bugs in your neural net
 - Does not work with drop out. (do grad check first, then turn on drop out)
 
 Steps to implement:
-1. $$\theta^+ = \theta + \epsilon$$
-2. $$\theta^- = \theta - \epsilon$$
-3. $$J^+ = J(\theta^+)$$
-4. $$J^- = J(\theta^-)$$
+1. $\theta^+ = \theta + \epsilon$
+2. $\theta^- = \theta - \epsilon$
+3. $J^+ = J(\theta^+)$
+4. $J^- = J(\theta^-)$
 5. gradapprox = $${J^+ - J^-}/{2\epsilon}$$
-6. $$difference = \frac{\|grad - gradapprox\|_2}{\|grad\|_2 + \|gradapprox\|_2}$$
+6. $difference = \frac{\|grad - gradapprox\|_2}{\|grad\|_2 + \|gradapprox\|_2}$
 
 If the difference is smaller than $$10^{-7}$$ threshold then you have cofidence that you comupted correcly on gradient in backward propagation. 
 
 # Optimization Algorithm
 ## Exponentially Weighted Averages
-$$V_t = \beta V_{t-1} + (1-\beta)\theta_t$$ This is averaging over $$1/1-\beta$$. For example when $$\beta = 0.98$$, we are averging over $$\frac{1}{1-0.98} = 50$$. The bigger the $$\beta$$ you have, the smoother the plot you will get and it will shift more the to right on the graph because you are now averging over a bigger window. It also adapts more slowly since you are averging over a bigger window. The reason is because we give more **weights** to first part of the formula $$\beta V_{t-1}$$ and a much smaller weight to whatever you are seeing rightnow. 
+$$V_t = \beta V_{t-1} + (1-\beta)\theta_t$$ This is averaging over $$\frac{1}{1 - \beta}$$. For example when $$\beta = 0.98$$, we are averging over $$\frac{1}{1-0.98} = 50$$. The bigger the $$\beta$$ you have, the smoother the plot you will get and it will shift more the to right on the graph because you are now averging over a bigger window. It also adapts more slowly since you are averging over a bigger window. The reason is because we give more **weights** to first part of the formula $$\beta V_{t-1}$$ and a much smaller weight to whatever you are seeing rightnow. 
 
 ### Bias Correction
 Exponentially weighted averages can have bias on the initializatino phase, we can you bias correction to solve the problm
@@ -81,41 +81,67 @@ $$\frac{V_t}{1-\beta^t}$$
 
 ## Gradient Decent with Momentum
 In one sentence, the basic idea is to compute an exponentially weighted average of your gradients, and then use that gradient to update your weights instead. You want slow learning on verticle direction but faster learning on horizontal directoin towards the minimum. After using momentum, you will find out it **averages the verticle direction to 0 as positive and negative value but average value for horizonal directino is still pretty big.**
+
 $$V_{dW} = \beta V_{dW} + (1 - \beta)dW$$
+
 $$V_{db} = \beta V_{db} + (1 - \beta)db$$
+
 $$W = W - \alpha V_{dW}, b = - \alpha V_{db}$$
 
 ## RMS prop (Root mean square prop)
 We assume **b** is verticle direction and **W** is horizontal direction.
+
 $$S_{dW} = \beta S_{dW} + (1 - \beta) dW^2$$
+
 $$S_{db} = \beta S_{db} + (1 - \beta) db^2$$
+
 $$W = W - \alpha \frac{dW}{\sqrt{S_{dW}}}$$
+
 $$b = b - \alpha \frac{db}{\sqrt{S_{db}}}$$
+
 We want $$S_{dW}$$ to be small and $$S_{db}$$ to be large so it can slow down the updates on the verticle direction. We can use a large **learning rate alpha** and get faster learning without diverging in the verticle direction. 
 
 ## Adam Optimization
+
 $$V_{dW} = \beta_1 V_{dW} + (1 - \beta_1) dW$$
+
 $$V_{db} = \beta_1 V_{db} + (1 - \beta_1) db$$
+
 $$S_{dW] = \beta_2 S_{dW} + (1 - \beta_2) dW$$
+
 $$S_{db} = \beta_2 S_{db} + (1 - \beta_2) db$$
+
 $$V_{dW}^{Corrected} = \frac{V_{dW}}{(1 - \beta_1^t)}$$
+
 $$V_{db}^{Corrected} = \frac{V_{db}}{(1 - \beta_1^t)}$$
+
 $$S_{dW}^{Corrected} = \frac{S_{dW}}{(1 - \beta_2^t)}$$
+
 $$S_{db}^{Corrected} = \frac{S_{db}}{(1 - \beta_2^t)}$$
+
 $$W = W - \alpha \frac{V_{dW}^{Corrected}}{\sqrt{S_{dW}^{Corrected}}+\epsilon}$$
+
 $$b = b - \alpha \frac{V_{db}^{Corrected}}{\sqrt{S_{db}^{Corrected}}+\epsilon}$$
+
 The default value for $$\beta_1 = 0.9, \beta_2 = 0.99, \epsilon = 10^{-8}$$
 
 ## Learning rate decay
+
 $$\alpha = \frac{1}{1 - decay_rate * epoch_num} \alpha_0$$
+
 $$\alpha = 0.95^{epoch_num} \alpha_0$$ --Exponentially decay
+
 $$\alpha = \frac{k}{\sqrt{epoch_num}} \alpha_0$$
 
 # Batch Normalization
 $$\mu = \frac{1}{m} \sum_{i} z^{(i)}$$
+
 $$\sigma^2 = \frac{1}{m} \sum_{i} (z_i - \mu)^2$$
+
 $$ z_{norm}^{(i)} = \frac{z^{(i)} - \mu}{\sqrt{\sigma^2 + \epsilon}}$$ range 0 - 1, mean 0, variance 1
+
 $$ \widetilde{z}^{(i)} = \gamma * z_{norm}^{(i)} + \beta$$
+
 $$\gamma$$ and $$\beta$$ allows you to set the mean and variance in hidden layer because we dont always want mean = 0 and variance =1.
 - Each mini-batch is scaled by the mean / variance computed on just that mini-batch.
 - This adds some noise to the values $$z^{[l]}$$ within that minibatch. So similar to dropout, it adds some noise to each hidden layer's activations.
@@ -125,6 +151,8 @@ $$\gamma$$ and $$\beta$$ allows you to set the mean and variance in hidden layer
 # Softmax Regression
 Activation function: 
 $$t = e^{([l])}$$
+
 $$a^{[l]} = \frac{e^{z^{[l]}}}{\sum_{j=1}^{4} t_i}$$
+
 $$a^{[l]} = \frac{t_i}{\sum_{j=1}^{4} t_i}$$
 

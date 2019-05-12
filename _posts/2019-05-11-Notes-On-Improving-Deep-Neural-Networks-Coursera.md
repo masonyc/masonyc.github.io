@@ -128,11 +128,11 @@ The default value for $$\beta_1 = 0.9, \beta_2 = 0.99, \epsilon = 10^{-8}$$
 
 ## Learning rate decay
 
-$\alpha = \frac{1}{1 - decay_rate * epoch_num} \alpha_0$
+$\alpha = \frac{1}{1 - decay\_rate * epoch\_num} \alpha_0$
 
-$\alpha = 0.95^{epoch_num} \alpha_0$ --Exponentially decay
+$\alpha = 0.95^{epoch\_num} \alpha_0$ --Exponentially decay
 
-$\alpha = \frac{k}{\sqrt{epoch_num}} \alpha_0$
+$\alpha = \frac{k}{\sqrt{epoch\_num}} \alpha_0$
 
 # Batch Normalization
 $\mu = \frac{1}{m} \sum_{i} z^{(i)}$

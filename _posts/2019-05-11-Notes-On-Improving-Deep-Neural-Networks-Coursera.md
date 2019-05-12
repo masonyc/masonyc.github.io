@@ -157,3 +157,4 @@ $a^{[l]} = \frac{e^{z^{[l]}}}{\sum_{j=1}^{4} t_i}$
 
 $a^{[l]} = \frac{t_i}{\sum_{j=1}^{4} t_i}$
 
+Softmax keep the output in decimal places. Hardmax will keep the output only in 0 or 1 values.

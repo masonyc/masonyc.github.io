@@ -19,9 +19,14 @@ Normal kernal looks like below.
 | 1 | 0 | -1 |
 
 Sobel kernel gives more weights on central row.
-|1|0|-1|
-|2|0|-2|
-|1|0|-1|
+
++---+---+----+
+| 1 | 0 | -1 |
++---+---+----+
+| 2 | 0 | -2 |
++---+---+----+
+| 1 | 0 | -1 |
++---+---+----+
 
 Scharr kernel
 |3|0|-3|

@@ -29,42 +29,42 @@ Scharr kernel
 | 10 | 0 | -10 |
 | 3 | 0 | -3 |
 
-#Padding
+# Padding
 There are two problems when using convolutional network, first problem is every time you apply convolutional operator, the image shrinks. Second problem is the edge of the image in convolutional network is only be used by one of the output. To solve this issue, we can add paddings to the image.
 
-Filter size is $$ f x f $$
-Input size is $$ n x n $$
-Ouput size is $$ n + 2p  - f + 1 x n + 2p  - f + 1$$ p is padding size
+Filter size is $$ f * f $$
+Input size is $$ n * n $$
+Ouput size is $$ (n + 2p  - f + 1) * (n + 2p  - f + 1)$$ p is padding size
 
 f is usually odd.
 
-#Strided
+# Strided
 Strided means how many steps you take (vertically and horizontaly) when applying filter.
 
-Output with stride is $$\lfloor \frac{n + 2p - f}{s} + 1 \rfloor x \lfloor \frac{n + 2p - f}{s} + 1 \rfloor$$
+Output with stride is $$\lfloor \frac{n + 2p - f}{s} + 1 \rfloor * \lfloor \frac{n + 2p - f}{s} + 1 \rfloor$$
 
 If fraction is not integer, we floor down the number because we can not calculate the area that not full filled.
 
-#Simple Convolutional Network
+# Simple Convolutional Network
 Convolutional network can also be used on over three dimensional volumes.
 
-Input size $$ n_{H}^{l-1} x n_{W}^{l-1} x n_{c}^{l-1} $$ n_c is the depth of the network
+Input size $$ n_{H}^{l-1} * n_{W}^{l-1} * n_{c}^{l-1} $$ n_c is the depth of the network
 
-Filter size $$ f^{l} x f^{l} x n_{c}^{l-1}$$ depth need to match with the input
+Filter size $$ f^{l} * f^{l} * n_{c}^{l-1}$$ depth need to match with the input
 
-Weights size $$ f^{l} x f^{l} x n_{c}^{l-1} x n_{c}^{l}$$ 
+Weights size $$ f^{l} * f^{l} * n_{c}^{l-1} * n_{c}^{l}$$ 
 
 Bias size $$n_{c}^{l}$$
 
-Output size $$ n_{H}^{l} x n_{W}^{l} x n_{c}^{l} $$
+Output size $$ n_{H}^{l} * n_{W}^{l} * n_{c}^{l} $$
 
 $$n_{c}$$ is the number of filters applied on.
 
-#Pooling
-##Max Pooling
+# Pooling
+## Max Pooling
 Take an input and apply the filter on it with step. Take the largest value in the filtered area on input and put it in output position. It usually used to do feature detection because it will keep the high number if feature is detected in the filtered area. Filter size and steps can not be learned from gradient descent. It is fixed value.
 
-##Averages Pooling
+## Averages Pooling
 Same as Max Pooling but using averages instead. Nowadays, max pooling is being used more often except the neural network is very deep say 7 x 7 x 1000. We use it to collapse the representation.
 
 #Why Convolution

@@ -31,6 +31,7 @@ Scharr kernel
 
 # Padding
 There are two problems when using convolutional network, first problem is every time you apply convolutional operator, the image shrinks. Second problem is the edge of the image in convolutional network is only be used by one of the output. To solve this issue, we can add paddings to the image.
+$$p = \frac{f-1}{2}$$
 
 Filter size is $$ f * f $$
 Input size is $$ n * n $$

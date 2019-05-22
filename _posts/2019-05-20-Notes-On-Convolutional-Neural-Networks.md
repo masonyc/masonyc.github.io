@@ -60,9 +60,9 @@ Bias size $$n_{c}^{l}$$
 
 Output size $$ n_{H}^{l} * n_{W}^{l} * n_{c}^{l} $$
 
-Numbers of parameters on fully connected layer are calculated by $$ m * n_{W}^{l-1} * n_{H}^{l-1} * n_{c}^{l-1} + (1,1,1,m) $$ For example last layer is (3,3,3) and this layer has 100 neurons, then number of parameters are $$100*3*3*3+100 = 2800$$
+Numbers of parameters on fully connected layer are calculated by $$ m * n_{W}^{l-1} * n_{H}^{l-1} * n_{c}^{l-1} + (1,1,1,m) $$ For example last layer is (3,3,3) and this layer has 100 neurons, then number of parameters are $$ 100 * 3 * 3 * 3 + 100 = 2800 $$
 
-Numbers of parameters on convolutional layer are calculated by $$ (f^{l} * f^{l} * n_{c}^{l-1} + Bias (1) ) * n_{c}^{l} $$ For example last layer is (3,3,3) and we have 10 filters that are each (5,5), then number of parameters are $$ (5 * 5 * 3 + 1) * 10 = 760 $$
+Numbers of parameters on convolutional layer are calculated by $$ ( f^{l} * f^{l} * n_{c}^{l-1} + Bias (1) ) * n_{c}^{l} $$ For example last layer is (3,3,3) and we have 10 filters that are each (5,5), then number of parameters are $$ (5 * 5 * 3 + 1) * 10 = 760 $$
 
 # Pooling
 ## Max Pooling

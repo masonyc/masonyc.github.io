@@ -48,7 +48,8 @@ If fraction is not integer, we floor down the number because we can not calculat
 # Simple Convolutional Network
 Convolutional network can also be used on over three dimensional volumes.
 
-Input size $$ n_{H}^{l-1} * n_{W}^{l-1} * n_{c}^{l-1} $$ n_c is the depth of the network
+Input size $$ n_{H}^{l-1} * n_{W}^{l-1} * n_{c}^{l-1} $$ 
+$$n_{c}$$ is the depth of the network
 
 Filter size $$ f^{l} * f^{l} * n_{c}^{l-1}$$ depth need to match with the input
 
@@ -67,7 +68,7 @@ Take an input and apply the filter on it with step. Take the largest value in th
 ## Averages Pooling
 Same as Max Pooling but using averages instead. Nowadays, max pooling is being used more often except the neural network is very deep say 7 x 7 x 1000. We use it to collapse the representation.
 
-#Why Convolution
+# Why Convolution
 **Parameter Sharing** a feature detector(such as verticle edge detector) thats useful in one part of the image is probably usefule in another part of the image.
 
 **Sparsity of connections** In each layer, each output is only depends on a small set of numbers (filtered area).

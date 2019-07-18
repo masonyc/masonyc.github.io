@@ -6,7 +6,7 @@
 # Site
 title: Yun's Learning Notes 
 subtitle:
-description: Interested in AI technology
+description: 
 author: 
   name: Mason(Yun) Chen 
   email: mason.yunchen@gmail.com
@@ -95,7 +95,7 @@ rss: false
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings

@@ -109,11 +109,11 @@ For each grid cell we define y as [px,bx,by,bh,bw,c1,c2,c3], px is the probabili
 ## Non-Max Suppression
 Even after filtering by thresholding over the classes scores, you still end up a lot of overlapping boxes. A second filter for selecting the right boxes is called non-maximum suppression (NMS). 
 
-![Non-max-suppression](/assets/images/non-max-suppression.png)
+![Non-max-suppression](/assets/non-max-suppression.png)
 
 Non-max suppression uses the very important function called "Intersection over Union", or IoU.
 
-![Intersection over union](/assets/images/iou.png)
+![Intersection over union](/assets/iou.png)
 
 
 ## Implementation 

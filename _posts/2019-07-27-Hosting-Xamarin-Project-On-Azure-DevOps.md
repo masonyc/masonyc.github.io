@@ -132,7 +132,8 @@ After changing the host machine, we have to set the correct Xamarin and Mono ver
 
 ## Pack to Nuget Package
 After building all the projects, now we need to pack it into nuget package.
-```- job: nuget_pack
+```
+- job: nuget_pack
   displayName: Nuget Phase
 
   pool:
